@@ -29,7 +29,7 @@ export const HeaderBanner = () => {
           <ul className="pill-list flex flex-1">
             <li className="pill-item flex-1 flex">
               <div className="pill-icon-background flex items-center justify-center">
-                <TruckIcon />
+                <TruckIcon width={16} height={16} />
               </div>
               <div className="pill-content flex-1">
                 <h5 className="pill-item-title">Free Shipping</h5>
@@ -38,7 +38,7 @@ export const HeaderBanner = () => {
             </li>
             <li className="pill-item flex-1 flex">
               <div className="pill-icon-background flex items-center justify-center">
-                <HappyIcon />
+                <HappyIcon width={16} height={16} />
               </div>
               <div className="pill-content flex-1">
                 <h5 className="pill-item-title">99% Satisfied Customers</h5>
@@ -49,7 +49,7 @@ export const HeaderBanner = () => {
             </li>
             <li className="pill-item flex-1 flex">
               <div className="pill-icon-background flex items-center justify-center">
-                <GuaranteeIcon />
+                <GuaranteeIcon width={16} height={16} />
               </div>
               <div className="pill-content flex-1">
                 <h5 className="pill-item-title">Originality Guaranteed</h5>

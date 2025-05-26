@@ -1,7 +1,7 @@
 .header-banner {
   color: var(--white);
   position: relative;
-  background-image: url("../../assests/images/Fashion.png");
+  background-image: url("@/assets/images/Fashion.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -59,7 +59,7 @@
   margin-right: 20px;
 }
 .icon-arrow {
-  background-image: url("../../assests/icons/arrow-right-icon.svg");
+  background-image: url("@assets/icons/arrow-right-icon.svg");
   width: 20px;
   height: 17px;
   background-repeat: no-repeat;
@@ -188,6 +188,9 @@
     margin-top: 48px;
     display: flex;
   }
+  &-icon {
+    fill: var(--black);
+  }
   &-icon-container {
     margin-bottom: 24px;
     width: 64px;
@@ -196,7 +199,7 @@
     background-color: var(--white);
     &:hover {
       .choosing-icon {
-        background-image: var(--hover-icon);
+        fill: var(--yellow-primary);
       }
     }
   }
@@ -370,7 +373,7 @@
   }
 
   .header-banner {
-    background-image: url("../../assests/images/Fashion - home-image9 2.png");
+    background-image: url("@/assets/images/Fashion-home-image92.png");
     &-title {
       font-size: 48px;
     }
@@ -435,7 +438,7 @@
   }
 
   .header-banner {
-    background-image: url("../../assests/images/Fashion1.png");
+    background-image: url("@/assets/images/Fashion1.png");
     height: 930px;
     &-content {
       top: 240px;

@@ -1,18 +1,13 @@
-import { UserIcon } from "./Icons";
+import { CartIcon, SearchIcon, UserIcon } from "./Icons";
 
 export const Header = ({}) => {
-  const logoStyles: React.CSSProperties & Record<string, string> = {
-    "--default-logo": "url('../../assests/images/Logo.png')",
-    "--dark-logo": "url('../../assests/images/Logo-dark.png')",
-  };
-
   return (
     <header className="header">
       <div className="container flex justify-between header-container">
         <div className="logo-container">
           <a href="/01_Common-Basic/HTML/cmdn-nhanbui/">
             <h1>
-              <div style={logoStyles} className="logo-image"></div>
+              <div className="logo-image"></div>
             </h1>
           </a>
         </div>
@@ -33,16 +28,25 @@ export const Header = ({}) => {
         <div className="options-container flex items-center">
           <ul className="option-list flex items-center">
             <li>
-              <button className="flex items-center justify-center"></button>
+              <button className="flex items-center justify-center">
+                <SearchIcon className="option-icon" color="inherit" />
+              </button>
             </li>
             <li>
               <a href="/01_Common-Basic/HTML/cmdn-nhanbui/cart.html">
-                <button className="flex items-center justify-center"></button>
+                <button className="flex items-center justify-center">
+                  <CartIcon
+                    className="option-icon"
+                    color="inherit"
+                    width={24}
+                    height={24}
+                  />
+                </button>
               </a>
             </li>
             <li>
               <button className="flex items-center justify-center">
-                <UserIcon />
+                <UserIcon className="option-icon" color="inherit" />
               </button>
             </li>
           </ul>

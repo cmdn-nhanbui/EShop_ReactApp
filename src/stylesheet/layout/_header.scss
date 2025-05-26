@@ -10,9 +10,11 @@
     margin-top: 24px;
   }
 }
-
+.option-icon {
+  fill: white;
+}
 .logo-image {
-  background-image: var(--default-logo);
+  background-image: url("@/assets/images/Logo.png");
   background-repeat: no-repeat;
   width: 139px;
   height: 35px;
@@ -63,7 +65,7 @@
     }
   }
   .logo-image {
-    background-image: var(--dark-logo);
+    background-image: url("@/assets/images/Logo-dark.png");
   }
   .options-container ul {
     color: var(--black);
@@ -76,6 +78,9 @@
   .nav-container {
     display: none;
   }
+  .option-icon {
+    fill: black;
+  }
 }
 
 @media (min-width: 740px) and (max-width: 1023px) {
@@ -85,7 +90,7 @@
     padding-right: 0;
   }
   .logo-image {
-    background-image: var(--default-logo);
+    background-image: url("@/assets/images/Logo.png");
   }
   .option-icon {
     background-image: var(--default-icon);
