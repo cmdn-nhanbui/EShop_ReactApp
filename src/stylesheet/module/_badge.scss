@@ -1,0 +1,26 @@
+.badge {
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  color: var(--white);
+  width: fit-content;
+}
+
+.badge-danger {
+  background-color: var(--red-primary);
+}
+
+@media (max-width: 740px) {
+  .badge {
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+}

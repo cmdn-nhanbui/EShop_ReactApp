@@ -1,0 +1,130 @@
+.section-new-letter {
+  position: relative;
+  height: 241px;
+  background-image: url("../../assests/images/Fashion - home-image8 1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.new-letter {
+  &-overlay {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
+  }
+  &-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+  }
+  &-title {
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--white);
+  }
+}
+
+.form-subscribe {
+  display: flex;
+  gap: 12px;
+
+  &-email {
+    width: 427px;
+    height: 48px;
+    gap: 10px;
+    border-radius: 61px;
+    padding-top: 14px;
+    padding-right: 24px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    background: #ffffff;
+  }
+  .button-submit {
+    width: 128px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 740px) {
+  .section-new-letter {
+    background-image: url("../../assests/images/Fashion - home-image8 3.png");
+    height: 217px;
+    background-size: cover;
+  }
+
+  .new-letter {
+    &-title {
+      max-width: 200px;
+      text-align: left;
+      font-size: 14px;
+    }
+    &-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &-content {
+      flex-direction: column;
+      padding-top: 24px;
+      padding-bottom: 32px;
+      gap: 24px;
+      align-items: start;
+      justify-content: space-between;
+    }
+  }
+
+  .form-subscribe {
+    width: 100%;
+    flex-direction: column;
+
+    .form-subscribe-email {
+      width: 100%;
+      height: 30px;
+      font-size: 12px;
+    }
+    .button-submit {
+      padding: 8px 18px;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+  .section-new-letter {
+    background-image: url("../../assests/images/Fashion-footer.png");
+  }
+  .new-letter-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .new-letter-title {
+    font-size: 24px;
+    max-width: 493px;
+    margin-top: 48px;
+  }
+  .new-letter-content {
+    gap: 30px;
+    justify-content: start;
+    flex-direction: column;
+  }
+  .form-subscribe {
+    flex-direction: row;
+  }
+  .form-subscribe-email {
+    height: 48px;
+  }
+  .form-subscribe {
+    width: 100%;
+  }
+  .form-subscribe-email {
+    flex: 1;
+  }
+}

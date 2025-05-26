@@ -1,0 +1,98 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  padding: 0 24px;
+
+  &-container {
+    margin-top: 24px;
+  }
+}
+
+.logo-image {
+  background-image: var(--default-logo);
+  background-repeat: no-repeat;
+  width: 139px;
+  height: 35px;
+}
+
+.options-container ul {
+  gap: 24px;
+  color: var(--white);
+}
+.options-container button {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option-icon {
+  background-image: var(--default-icon);
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.nav-container {
+  width: 400px;
+}
+
+.nav-item {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--yellow-primary);
+}
+
+@media (max-width: 740px) {
+  .header {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    .header-container {
+      margin: 0;
+      padding: 20px 23px;
+    }
+  }
+  .logo-image {
+    background-image: var(--dark-logo);
+  }
+  .options-container ul {
+    color: var(--black);
+  }
+  .option-icon {
+    background-image: var(--dark-icon);
+    width: 20px;
+    height: 20px;
+  }
+  .nav-container {
+    display: none;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+  .header {
+    position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .logo-image {
+    background-image: var(--default-logo);
+  }
+  .option-icon {
+    background-image: var(--default-icon);
+    width: 24px;
+    height: 24px;
+  }
+  .nav-container {
+    display: none;
+  }
+}
