@@ -1,7 +1,7 @@
 .section-new-letter {
   position: relative;
   height: 241px;
-  background-image: url("../../assests/images/Fashion - home-image8 1.png");
+  background-image: url('@/assets/images/Fashion - home-image8 1.png');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -9,7 +9,7 @@
 .new-letter {
   &-overlay {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     width: 100%;
@@ -55,7 +55,7 @@
 
 @media (max-width: 740px) {
   .section-new-letter {
-    background-image: url("../../assests/images/Fashion - home-image8 3.png");
+    background-image: url('@/assets/images/Fashion - home-image8 3.png');
     height: 217px;
     background-size: cover;
   }
@@ -99,7 +99,7 @@
 
 @media (min-width: 740px) and (max-width: 1023px) {
   .section-new-letter {
-    background-image: url("../../assests/images/Fashion-footer.png");
+    background-image: url('@/assets/images/Fashion-footer.png');
   }
   .new-letter-container {
     padding-left: 0;

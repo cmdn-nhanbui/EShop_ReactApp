@@ -1,19 +1,14 @@
-import clsx from "clsx";
-import type { ReactNode } from "react";
-
-type BadgeProps = {
-  children: ReactNode;
-  danger?: boolean;
-  className?: string;
-};
+import clsx from 'clsx'
+import type { BadgeProps } from '../../../constants/types'
 
 export const Badge = ({ children, danger, className }: BadgeProps) => {
   const badgeClasses = clsx(
-    "badge",
+    'badge',
     {
-      "badge-danger": danger,
+      'badge-danger': danger,
     },
-    className
-  );
-  return <div className={badgeClasses}>{children}</div>;
-};
+    className,
+  )
+
+  return <div className={badgeClasses}>{children}</div>
+}

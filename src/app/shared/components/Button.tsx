@@ -1,35 +1,20 @@
-import type { ReactNode } from "react";
-import { clsx } from "clsx";
+import { clsx } from 'clsx'
+import type { ButtonProps } from '../../../constants/types'
 
-type ButtonProps = {
-  primary?: boolean;
-  outlined?: boolean;
-  rounded?: boolean;
-  children: ReactNode;
-  className?: string;
-  onClick?: () => void;
-};
-
-export const Button = ({
-  children,
-  primary,
-  outlined,
-  onClick,
-  rounded,
-  className,
-}: ButtonProps) => {
+export const Button = ({ children, primary, outlined, onClick, rounded, className }: ButtonProps) => {
   const buttonClass = clsx(
-    "button",
+    'button',
     {
-      "button-primary": primary,
-      "button-outlined": outlined,
-      "rounded-lg": rounded,
+      'button-primary': primary,
+      'button-outlined': outlined,
+      'rounded-lg': rounded,
     },
-    className
-  );
+    className,
+  )
+
   return (
     <button onClick={onClick} className={buttonClass}>
       {children}
     </button>
-  );
-};
+  )
+}
