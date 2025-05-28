@@ -42,6 +42,12 @@
   }
 }
 
+.toast-error {
+  background-color: var(--red-primary);
+  color: var(--white);
+  border-color: var(--warning);
+}
+
 @keyframes toast-in {
   to {
     opacity: 1;
