@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon, LinkedInIcon, TikTokIcon, YoutubeIcon } from './Icons'
+import { Icon } from './Icons'
 import logoImage from '@/assets/images/Logo.png'
 
 export const Footer = () => {
@@ -17,27 +17,28 @@ export const Footer = () => {
               <ul className='media-list flex'>
                 <li className='media-item'>
                   <a href='https://facebook.com'>
-                    <FacebookIcon className='media-icon' />
+                    {/* <FacebookIcon color='white' className='media-icon' /> */}
+                    <Icon icon='fb' />
                   </a>
                 </li>
                 <li className='media-item'>
                   <a href='https://instagram.com'>
-                    <InstagramIcon className='media-icon' />
+                    <Icon icon='instagram' className='media-icon' />
                   </a>
                 </li>
                 <li className='media-item'>
                   <a href='https://linkedin.com'>
-                    <LinkedInIcon className='media-icon' />
+                    <Icon icon='linked-in' className='media-icon' />
                   </a>
                 </li>
                 <li className='media-item'>
                   <a href='https://youtube.com'>
-                    <YoutubeIcon className='media-icon' />
+                    <Icon icon='youtube' className='media-icon' />
                   </a>
                 </li>
                 <li className='media-item'>
                   <a href='https://instagram.com'>
-                    <TikTokIcon className='media-icon' />
+                    <Icon icon='tiktok' className='media-icon' />
                   </a>
                 </li>
               </ul>

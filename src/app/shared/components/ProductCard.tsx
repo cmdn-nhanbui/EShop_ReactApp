@@ -2,7 +2,7 @@ import type { CartItem, ProductCardProps } from '../../../constants/types'
 import { useToast } from '../contexts/toast.context'
 import { useStorage } from '../hooks/useStorage'
 import { Badge } from './Badge'
-import { CartIcon } from './Icons'
+import { Icon } from './Icons'
 
 export const ProductCard = ({ id, name, price, discountValue, thumbnail }: ProductCardProps) => {
   const publicPrice = price * (1 - discountValue)
@@ -53,7 +53,7 @@ export const ProductCard = ({ id, name, price, discountValue, thumbnail }: Produ
           </div>
         </div>
         <button onClick={handleAddToCart} className='button-cart' data-id='${id}'>
-          <CartIcon color='black' />
+          <Icon icon='cart' color='black' />
         </button>
       </div>
     </li>

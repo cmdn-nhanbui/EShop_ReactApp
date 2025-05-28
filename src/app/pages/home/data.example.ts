@@ -2,7 +2,7 @@ import type { Product } from '../../../constants/types'
 
 const images = import.meta.glob('@/assets/images/*.png', { eager: true })
 
-function importImage(url: string) {
+const importImage = (url: string) => {
   return (images[url] as { default: string }).default
 }
 

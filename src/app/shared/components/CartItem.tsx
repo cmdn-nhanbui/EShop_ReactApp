@@ -1,7 +1,7 @@
 import type { CartItem as CartItemType } from '../../../constants/types'
 import { useStorage } from '../hooks/useStorage'
 import { Counter } from './Counter'
-import { TrashCanIcon } from './Icons'
+import { Icon } from './Icons'
 
 export const CartItem = ({ name, quantity, discountValue, price, id, thumbnail }: CartItemType) => {
   const publicPrice = price * (1 - discountValue)
@@ -50,7 +50,7 @@ export const CartItem = ({ name, quantity, discountValue, price, id, thumbnail }
       </div>
 
       <button onClick={handleDeleteCartItem} className='button-remove' data-id='${id}'>
-        <TrashCanIcon color='black' />
+        <Icon icon='trash-can' />
       </button>
     </li>
   )

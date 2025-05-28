@@ -1,4 +1,4 @@
-import { ArrowRightIcon, GuaranteeIcon, HappyIcon, TruckIcon } from './Icons'
+import { Icon } from './Icons'
 
 export const HeaderBanner = () => {
   return (
@@ -17,7 +17,7 @@ export const HeaderBanner = () => {
             <a href='/shops'>
               <button className='flex items-center button-shop'>
                 <div className='button-arrow'>
-                  <ArrowRightIcon />
+                  <Icon icon='arrow-right' />
                 </div>
                 <span> SHOP NOW </span>
               </button>
@@ -29,7 +29,7 @@ export const HeaderBanner = () => {
           <ul className='pill-list flex flex-1'>
             <li className='pill-item flex-1 flex'>
               <div className='pill-icon-background flex items-center justify-center'>
-                <TruckIcon width={16} height={16} />
+                <Icon icon='truck' width={16} height={16} />
               </div>
               <div className='pill-content flex-1'>
                 <h5 className='pill-item-title'>Free Shipping</h5>
@@ -38,7 +38,7 @@ export const HeaderBanner = () => {
             </li>
             <li className='pill-item flex-1 flex'>
               <div className='pill-icon-background flex items-center justify-center'>
-                <HappyIcon width={16} height={16} />
+                <Icon icon='happy' width={16} height={16} />
               </div>
               <div className='pill-content flex-1'>
                 <h5 className='pill-item-title'>99% Satisfied Customers</h5>
@@ -47,7 +47,7 @@ export const HeaderBanner = () => {
             </li>
             <li className='pill-item flex-1 flex'>
               <div className='pill-icon-background flex items-center justify-center'>
-                <GuaranteeIcon width={16} height={16} />
+                <Icon icon='guarantee' width={16} height={16} />
               </div>
               <div className='pill-content flex-1'>
                 <h5 className='pill-item-title'>Originality Guaranteed</h5>

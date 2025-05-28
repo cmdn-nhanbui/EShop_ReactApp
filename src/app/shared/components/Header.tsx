@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CartIcon, SearchIcon, UserIcon } from './Icons'
+import { Icon } from './Icons'
 import { ROUTES } from '../../../constants/routes'
 
 export const Header = ({}) => {
@@ -31,19 +31,19 @@ export const Header = ({}) => {
           <ul className='option-list flex items-center'>
             <li>
               <button className='flex items-center justify-center'>
-                <SearchIcon className='option-icon' color='inherit' />
+                <Icon icon='search' className='option-icon' color='inherit' />
               </button>
             </li>
             <li>
               <Link to={ROUTES.cart}>
                 <button className='flex items-center justify-center'>
-                  <CartIcon className='option-icon' color='inherit' width={24} height={24} />
+                  <Icon icon='cart' className='option-icon' color='inherit' width={24} height={24} />
                 </button>
               </Link>
             </li>
             <li>
               <button className='flex items-center justify-center'>
-                <UserIcon className='option-icon' color='inherit' />
+                <Icon icon='user' className='option-icon' color='inherit' />
               </button>
             </li>
           </ul>
