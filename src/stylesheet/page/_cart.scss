@@ -41,6 +41,15 @@
     cursor: pointer;
   }
 }
+.cart-empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-cart-empty {
+  margin-bottom: 16px;
+  width: 200px;
+}
 
 @media (max-width: 740px) {
   .cart-container {
