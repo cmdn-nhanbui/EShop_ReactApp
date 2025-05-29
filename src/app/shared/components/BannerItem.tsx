@@ -1,13 +1,13 @@
-import { Badge } from './Badge'
-import { Button } from './Button'
+import { Badge } from './Badge';
+import { Button } from './Button';
 
 type BannerItemProps = {
-  title: string
-  imageUrl: string
-  navigate?: string
-  moreTitle?: string
-  badge?: string
-}
+  title: string;
+  imageUrl: string;
+  navigate?: string;
+  moreTitle?: string;
+  badge?: string;
+};
 
 export const BannerItem = ({ title, imageUrl, navigate = '/', moreTitle, badge }: BannerItemProps) => {
   return (
@@ -19,7 +19,7 @@ export const BannerItem = ({ title, imageUrl, navigate = '/', moreTitle, badge }
     >
       <div className='banner-item-overlay'></div>
       <div className='banner-item-content flex flex-col'>
-        {badge && <Badge danger>{badge}</Badge>}
+        {badge && <Badge color='DANGER'>{badge}</Badge>}
         <h3 className='banner-item-title'>{title}</h3>
         {moreTitle && (
           <a href={navigate}>
@@ -28,5 +28,5 @@ export const BannerItem = ({ title, imageUrl, navigate = '/', moreTitle, badge }
         )}
       </div>
     </div>
-  )
-}
+  );
+};

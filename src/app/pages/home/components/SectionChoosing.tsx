@@ -1,6 +1,6 @@
-import type { ChooseItemProps } from '../../../../constants/types'
-import { ChooseItem } from '../../../shared/components/ChooseItem'
-import { Icon } from '../../../shared/components/Icons'
+import type { ChooseItemProps } from '../../../core/constants/types';
+import { ChooseItem } from '../../../shared/components/ChooseItem';
+import { Icon } from '../../../shared/components/Icons';
 
 const choosingItems: ChooseItemProps[] = [
   {
@@ -23,7 +23,7 @@ const choosingItems: ChooseItemProps[] = [
     title: 'Finest Quality',
     description: 'Designed to last, each of our products hasbeen crafted with the finest materials.',
   },
-]
+];
 
 export const SectionChoosing = () => {
   return (
@@ -32,10 +32,10 @@ export const SectionChoosing = () => {
         <h3 className='section-title text-center'>Why should you choose us?</h3>
         <ul className='row'>
           {choosingItems?.map((item, index) => {
-            return <ChooseItem key={index} {...item} />
+            return <ChooseItem key={index} {...item} />;
           })}
         </ul>
       </div>
     </section>
-  )
-}
+  );
+};

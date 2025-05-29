@@ -1,4 +1,4 @@
-import type { ChooseItemProps } from '../../../constants/types'
+import type { ChooseItemProps } from '../../core/constants/types';
 
 export const ChooseItem = ({ icon, title, description }: ChooseItemProps) => {
   return (
@@ -9,5 +9,5 @@ export const ChooseItem = ({ icon, title, description }: ChooseItemProps) => {
         <p className='choosing-item-desc'>{description}</p>
       </div>
     </li>
-  )
-}
+  );
+};
