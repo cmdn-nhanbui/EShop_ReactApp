@@ -1,21 +1,22 @@
-import clsx from 'clsx'
-import { Button } from '../../../shared/components/Button'
-import { ProductCard } from '../../../shared/components/ProductCard'
-import { PRODUCTS } from '../data.example'
+import clsx from 'clsx';
+
+import { Button } from '../../../shared/components/Button';
+import { ProductCard } from '../../../shared/components/ProductCard';
+import { PRODUCTS } from '../data.example';
 
 type ListProductProps = {
-  navigateMore?: string
-  title: string
-  containerClassName?: string
-}
+  navigateMore?: string;
+  title: string;
+  containerClassName?: string;
+};
 
 export const ListProduct = ({ navigateMore, title, containerClassName }: ListProductProps) => {
-  const containerClass = clsx('section selected-section', containerClassName)
+  const containerClass = clsx('section selected-section', containerClassName);
 
   const headerClass = clsx('selected-header flex items-center', {
     'justify-center': !navigateMore,
     'justify-between': navigateMore,
-  })
+  });
 
   return (
     <section className={containerClass}>
@@ -25,7 +26,7 @@ export const ListProduct = ({ navigateMore, title, containerClassName }: ListPro
             <h3 className='section-title selected-title'>{title}</h3>
             {navigateMore && (
               <a href={navigateMore} className='selected-button'>
-                <Button outlined rounded>
+                <Button variant='OUTLINED' rounded>
                   SHOW MORE
                 </Button>
               </a>
@@ -42,11 +43,11 @@ export const ListProduct = ({ navigateMore, title, containerClassName }: ListPro
                   price={product?.price}
                   thumbnail={product?.thumbnail}
                 />
-              )
+              );
             })}
           </ul>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

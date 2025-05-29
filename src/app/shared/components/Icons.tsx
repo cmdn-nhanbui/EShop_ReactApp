@@ -1,9 +1,9 @@
 interface IconProps {
-  icon: keyof typeof ICON_DATA
-  className?: string
-  width?: number
-  height?: number
-  color?: string
+  icon: keyof typeof ICON_DATA;
+  className?: string;
+  width?: number;
+  height?: number;
+  color?: string;
 }
 
 const ICON_DATA = {
@@ -334,7 +334,7 @@ const ICON_DATA = {
     color: 'white',
     viewBox: '0 0 17 14',
   },
-}
+};
 
 export const Icon = ({ icon, className, width, height, color }: IconProps) => {
   return (
@@ -348,5 +348,5 @@ export const Icon = ({ icon, className, width, height, color }: IconProps) => {
     >
       {ICON_DATA[icon].data}
     </svg>
-  )
-}
+  );
+};

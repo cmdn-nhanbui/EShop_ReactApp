@@ -1,39 +1,44 @@
-import type { CartItem as CartItemType } from '../../../constants/types'
-import { useStorage } from '../hooks/useStorage'
-import { Counter } from './Counter'
-import { Icon } from './Icons'
+import type { CartItem as CartItemType } from '../../core/constants/types';
+import { Counter } from './Counter';
+import { Icon } from './Icons';
+
+import { useStorage } from '../hooks/useStorage';
+import { useToast } from '../hooks/useToast';
 
 export const CartItem = ({ name, quantity, discountValue, price, id, thumbnail }: CartItemType) => {
-  const publicPrice = price * (1 - discountValue)
-  const hasDiscount = discountValue !== 0
-  const { setCartItems } = useStorage()
+  const { showToast } = useToast();
+
+  const publicPrice = price * (1 - discountValue);
+  const hasDiscount = discountValue !== 0;
+  const { setCartItems } = useStorage();
 
   const handleChangeQuantity = (value: number) => {
     if (value === 0) {
-      return handleDeleteCartItem()
+      return handleDeleteCartItem();
     }
 
     setCartItems((prev: CartItemType[]) => {
-      const newState = [...prev]
-      const cartItem = newState?.find((item: CartItemType) => item?.id === id)
+      const newState = [...prev];
+      const cartItem = newState?.find((item: CartItemType) => item?.id === id);
 
       if (cartItem) {
-        cartItem.quantity = value
+        cartItem.quantity = value;
       }
 
-      return newState
-    })
-  }
+      return newState;
+    });
+  };
 
   const handleDeleteCartItem = () => {
-    const confirmDelete = window.confirm('Do you want remove this product ?')
+    const confirmDelete = window.confirm('Do you want remove this product ?');
 
     if (confirmDelete) {
       setCartItems((prev: CartItemType[]) => {
-        return [...prev]?.filter((item) => item?.id !== id)
-      })
+        return [...prev]?.filter((item) => item?.id !== id);
+      });
+      showToast({ message: 'Delete product successfully' });
     }
-  }
+  };
 
   return (
     <li className='cart-item' data-id={id}>
@@ -53,5 +58,5 @@ export const CartItem = ({ name, quantity, discountValue, price, id, thumbnail }
         <Icon icon='trash-can' />
       </button>
     </li>
-  )
-}
+  );
+};

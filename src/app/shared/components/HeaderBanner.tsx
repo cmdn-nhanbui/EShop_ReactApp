@@ -1,4 +1,4 @@
-import { Icon } from './Icons'
+import { Icon } from './Icons';
 
 export const HeaderBanner = () => {
   return (
@@ -92,5 +92,5 @@ export const HeaderBanner = () => {
         </ul>
       </div>
     </>
-  )
-}
+  );
+};

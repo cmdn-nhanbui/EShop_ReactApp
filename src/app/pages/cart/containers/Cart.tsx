@@ -1,26 +1,28 @@
-import { useMemo } from 'react'
-import { CartItem } from '../../../shared/components/CartItem'
-import { useStorage } from '../../../shared/hooks/useStorage'
-import type { CartItem as CartItemType } from '../../../../constants/types'
-import emptyBox from '@/assets/images/empty-box.png'
+import { useMemo } from 'react';
+
+import emptyBox from '@/assets/images/empty-box.png';
+
+import type { CartItem as CartItemType } from '../../../core/constants/types';
+import { CartItem } from '../../../shared/components/CartItem';
+import { useStorage } from '../../../shared/hooks/useStorage';
 
 const Cart = () => {
-  const { cartItems } = useStorage()
+  const { cartItems } = useStorage();
 
   const cartTotal = useMemo(() => {
     const subtotal = cartItems?.reduce((prev: number, curr: CartItemType) => {
-      const publicPrice = curr?.price * (1 - curr?.discountValue)
-      return prev + publicPrice * curr?.quantity
-    }, 0)
-    return parseFloat(subtotal.toFixed(2))
-  }, [cartItems])
+      const publicPrice = curr?.price * (1 - curr?.discountValue);
+      return prev + publicPrice * curr?.quantity;
+    }, 0);
+    return parseFloat(subtotal.toFixed(2));
+  }, [cartItems]);
 
-  const total = cartTotal + 5 + 24
+  const total = cartTotal + 5 + 24;
 
   return (
-    <div>
+    <>
       <div className='cart-header'></div>
-      <main className='cart-container'>
+      <div className='cart-container'>
         <div className='container '>
           <div className='flex flex-col flex-1'>
             <h3 className='cart-title'>Order Summary</h3>
@@ -55,9 +57,9 @@ const Cart = () => {
             </div>
           </div>
         </div>
-      </main>
-    </div>
-  )
-}
+      </div>
+    </>
+  );
+};
 
-export default Cart
+export default Cart;

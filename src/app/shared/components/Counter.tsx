@@ -1,35 +1,35 @@
-import { useEffect, useState } from 'react'
-import type { CounterProps } from '../../../constants/types'
+import { useEffect, useState } from 'react';
+import type { CounterProps } from '../../core/constants/types';
 
 export const Counter = ({ value: defaultValue, onChange, min = 1, max = 1000 }: CounterProps) => {
-  const isControlled = typeof onChange === 'function'
-  const [internalValue, setInternalValue] = useState(defaultValue)
+  const isControlled = typeof onChange === 'function';
+  const [internalValue, setInternalValue] = useState(defaultValue);
 
-  const value = isControlled ? defaultValue : internalValue
+  const value = isControlled ? defaultValue : internalValue;
 
   const updateValue = (newValue: number) => {
-    if (newValue < min || newValue > max) return
+    if (newValue < min || newValue > max) return;
 
     if (isControlled) {
-      onChange?.(newValue)
+      onChange?.(newValue);
     } else {
-      setInternalValue(newValue)
+      setInternalValue(newValue);
     }
-  }
+  };
 
   const handleIncrease = () => {
-    updateValue(value + 1)
-  }
+    updateValue(value + 1);
+  };
 
   const handleDecrease = () => {
-    updateValue(value - 1)
-  }
+    updateValue(value - 1);
+  };
 
   useEffect(() => {
     if (!isControlled) {
-      setInternalValue(defaultValue)
+      setInternalValue(defaultValue);
     }
-  }, [defaultValue, isControlled])
+  }, [defaultValue, isControlled]);
 
   return (
     <div className='quantity-selector'>
@@ -41,5 +41,5 @@ export const Counter = ({ value: defaultValue, onChange, min = 1, max = 1000 }: 
         +
       </button>
     </div>
-  )
-}
+  );
+};
