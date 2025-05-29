@@ -1,5 +1,4 @@
-// useStorage.ts
-import { useContext } from 'react'
-import { StorageContext } from '../contexts/storage.context'
+import { useContext } from 'react';
+import { StorageContext } from '../contexts/storage.context';
 
-export const useStorage = () => useContext(StorageContext)
+export const useStorage = () => useContext(StorageContext);

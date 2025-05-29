@@ -1,10 +1,9 @@
-import type { Product } from '../../../constants/types'
-
-const images = import.meta.glob('@/assets/images/*.png', { eager: true })
+const images = import.meta.glob('@/assets/images/*.png', { eager: true });
+import type { Product } from '../../core/constants/types';
 
 const importImage = (url: string) => {
-  return (images[url] as { default: string }).default
-}
+  return (images[url] as { default: string }).default;
+};
 
 export const PRODUCTS: Product[] = [
   {
@@ -35,4 +34,4 @@ export const PRODUCTS: Product[] = [
     thumbnail: importImage('/src/assets/images/image-4.png'),
     discountValue: 0,
   },
-]
+];
