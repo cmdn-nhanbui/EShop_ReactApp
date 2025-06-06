@@ -7,10 +7,10 @@ export const SectionLetter = () => {
           <p className='new-letter-title'>Subscribe to our newsletter andreceive exclusive offers every week</p>
           <form action='' method='post' className='form-subscribe'>
             <input placeholder='Enter your email' className='form-subscribe-email' />
-            <button className='rounded-lg button-primary button-submit'>Submit</button>
+            <button className='rounded-lg button button-primary button-submit'>Subscribe</button>
           </form>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

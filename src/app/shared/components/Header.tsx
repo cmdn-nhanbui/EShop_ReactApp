@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom'
-import { Icon } from './Icons'
-import { ROUTES } from '../../../constants/routes'
+import { Link } from 'react-router-dom';
+
+import { ROUTES } from '../../core/constants/routes';
+import { Icon } from './Icons';
 
 export const Header = ({}) => {
   return (
     <header className='header'>
       <div className='container flex justify-between header-container'>
         <div className='logo-container'>
-          <Link to={ROUTES.root}>
+          <Link to={ROUTES.ROOT}>
             <h1>
               <div className='logo-image'></div>
             </h1>
@@ -35,7 +36,7 @@ export const Header = ({}) => {
               </button>
             </li>
             <li>
-              <Link to={ROUTES.cart}>
+              <Link to={ROUTES.CART}>
                 <button className='flex items-center justify-center'>
                   <Icon icon='cart' className='option-icon' color='inherit' width={24} height={24} />
                 </button>
@@ -50,5 +51,5 @@ export const Header = ({}) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

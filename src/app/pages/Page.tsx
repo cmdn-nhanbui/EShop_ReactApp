@@ -1,15 +1,12 @@
-import { Outlet } from 'react-router'
-import { Header } from '../shared/components/Header'
-import { Footer } from '../shared/components/Footer'
+import { Outlet } from 'react-router';
+import DefaultLayout from '../shared/layouts/DefaultLayout';
 
 const Page = () => {
   return (
-    <div className='pages-container'>
-      <Header />
+    <DefaultLayout>
       <Outlet />
-      <Footer />
-    </div>
-  )
-}
+    </DefaultLayout>
+  );
+};
 
-export default Page
+export default Page;

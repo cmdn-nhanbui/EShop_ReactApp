@@ -1,5 +1,20 @@
-import { Icon } from './Icons'
-import logoImage from '@/assets/images/Logo.png'
+import logoImage from '@/assets/images/Logo.png';
+import { Icon } from './Icons';
+
+const footerMenus = [
+  {
+    title: 'Shopping Online',
+    children: ['Order status', 'Shipping and Delivery', 'Payment Options', 'Returns', 'Contact Us'],
+  },
+  {
+    title: 'Information',
+    children: ['Gift Cards', 'Find a store', 'Newsletter', 'Become a member', 'Site feedback'],
+  },
+  {
+    title: 'Contact',
+    children: ['store@uikit.com', 'Hotline: +1 131 138 138'],
+  },
+];
 
 export const Footer = () => {
   return (
@@ -37,7 +52,7 @@ export const Footer = () => {
                   </a>
                 </li>
                 <li className='media-item'>
-                  <a href='https://instagram.com'>
+                  <a href='https://tiktok.com'>
                     <Icon icon='tiktok' className='media-icon' />
                   </a>
                 </li>
@@ -47,62 +62,21 @@ export const Footer = () => {
 
           {/* <!-- right --> */}
           <div className='footer-menus col col-6 flex col-md-12'>
-            <div className='footer-menu flex-1'>
-              <p className='footer-menu-title'>Shopping Online</p>
-              <ul className='shipping-list'>
-                <li className='shopping-item'>
-                  <a href='#'>Order Status</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Shipping and Delivery</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Payment Options</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Returns</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Contact Us</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className='footer-menu flex-1'>
-              <p className='footer-menu-title'>Information</p>
-              <ul className='shipping-list'>
-                <li className='shopping-item'>
-                  <a href='#'>Gift Cards</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Find a store</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Newsletter</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Become a member</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='#'>Site feedback</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className='footer-menu flex-1'>
-              <p className='footer-menu-title'>Contact</p>
-              <ul className='shipping-list'>
-                <li className='shopping-item'>
-                  <a href='mailto:store@uikit.com'>store@uikit.com</a>
-                </li>
-                <li className='shopping-item'>
-                  <a href='tel:+1 131 138 138'>Hotline: +1 131 138 138</a>
-                </li>
-              </ul>
-            </div>
+            {footerMenus?.map((item, index) => (
+              <div key={index} className='footer-menu flex-1'>
+                <p className='footer-menu-title'>{item.title}</p>
+                <ul className='shipping-list'>
+                  {item?.children?.map((childItem, index) => (
+                    <li key={index} className='shopping-item'>
+                      <a href='#'>{childItem}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
