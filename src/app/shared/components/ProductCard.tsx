@@ -1,41 +1,32 @@
-import type { CartItem, ProductCardProps } from '../../core/constants/types';
-
-import { useToast } from '../hooks/useToast';
-import { useStorage } from '../hooks/useStorage';
+import { useDispatch } from 'react-redux';
 
 import { Badge } from './Badge';
 import { Icon } from './Icons';
+
+import { useToast } from '../hooks/useToast';
+import { addCartItem } from '../../../redux/actions/cartActions';
+import { type AppDispatch } from '../../../redux/store';
+import type { CartItem, ProductCardProps } from '../../core/constants/types';
 
 export const ProductCard = ({ id, name, price, discountValue, thumbnail }: ProductCardProps) => {
   const publicPrice = price * (1 - discountValue);
   const discountPercent = discountValue * 100;
 
-  const { products, setCartItems } = useStorage();
   const { showToast } = useToast();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleAddToCart = () => {
+    const cartItem: CartItem = {
+      id,
+      name,
+      price,
+      discountValue,
+      thumbnail,
+      quantity: 1,
+    };
+    dispatch(addCartItem(cartItem));
+
     showToast({ message: 'Add to cart successfully' });
-
-    setCartItems((prev: CartItem[]) => {
-      const newState: CartItem[] = [...prev];
-      const isExistedInCart: CartItem | undefined = newState?.find((item) => item.id === id);
-
-      if (isExistedInCart) {
-        isExistedInCart.quantity++;
-        return newState;
-      }
-
-      const product = products?.find((product) => product.id === id);
-
-      if (product) {
-        const newCartItem: CartItem = {
-          ...product,
-          quantity: 1,
-        };
-        newState.push(newCartItem);
-      }
-      return newState;
-    });
   };
 
   return (

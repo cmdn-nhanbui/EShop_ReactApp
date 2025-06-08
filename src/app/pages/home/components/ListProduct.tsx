@@ -2,15 +2,24 @@ import clsx from 'clsx';
 
 import { Button } from '../../../shared/components/Button';
 import { ProductCard } from '../../../shared/components/ProductCard';
-import { PRODUCTS } from '../data.example';
+import { ListProductSkeleton } from '../../../shared/components/ListProductSkeleton';
+import type { Product } from '../../../core/constants/types';
 
 type ListProductProps = {
   navigateMore?: string;
   title: string;
   containerClassName?: string;
+  loading?: boolean;
+  products?: Product[];
 };
 
-export const ListProduct = ({ navigateMore, title, containerClassName }: ListProductProps) => {
+export const ListProduct = ({
+  navigateMore,
+  title,
+  containerClassName,
+  loading = true,
+  products = [],
+}: ListProductProps) => {
   const containerClass = clsx('section selected-section', containerClassName);
 
   const headerClass = clsx('selected-header flex items-center', {
@@ -32,8 +41,11 @@ export const ListProduct = ({ navigateMore, title, containerClassName }: ListPro
               </a>
             )}
           </div>
-          <ul id='selected-list' className='row'>
-            {PRODUCTS?.map((product, index: number) => {
+
+          {loading && <ListProductSkeleton />}
+
+          <ul className='row list-product'>
+            {products?.map((product, index: number) => {
               return (
                 <ProductCard
                   key={index}

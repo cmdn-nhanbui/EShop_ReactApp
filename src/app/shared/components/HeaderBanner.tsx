@@ -60,7 +60,7 @@ export const HeaderBanner = () => {
         </div>
       </section>
 
-      <div className='flex items-center pill-container-mobile'>
+      <section className='flex items-center pill-container-mobile'>
         <ul className='pill-list flex'>
           <li className='pill-item flex-1 flex'>
             <div className='pill-icon-background flex items-center justify-center'>
@@ -90,7 +90,7 @@ export const HeaderBanner = () => {
             </div>
           </li>
         </ul>
-      </div>
+      </section>
     </>
   );
 };

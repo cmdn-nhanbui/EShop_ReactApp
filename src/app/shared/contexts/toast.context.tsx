@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useState, type ReactNode } from 'react';
 
-import { TOAST_TYPES, type ShowToastOptions, type Toast, type ToastContextType } from '../../core/constants/types';
+import { type ShowToastOptions, type Toast, type ToastContextType } from '../../core/constants/types';
 import ToastContainer from '../../pages/home/components/ToastContainer';
 
 export const ToastContext = createContext<ToastContextType | undefined>(undefined);
