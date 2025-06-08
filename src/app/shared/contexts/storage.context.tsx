@@ -10,7 +10,6 @@ const defaultValue: StorageProps = {
 
 export const Storage = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[]>(PRODUCTS);
-
   return <StorageContext.Provider value={{ products, setProducts }}>{children}</StorageContext.Provider>;
 };
 

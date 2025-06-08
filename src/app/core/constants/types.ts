@@ -80,3 +80,7 @@ export interface ErrorProps {
   navigateTo?: string | false;
   navigateTitle?: string;
 }
+
+export type HeaderProps = {
+  transparent?: boolean;
+};
