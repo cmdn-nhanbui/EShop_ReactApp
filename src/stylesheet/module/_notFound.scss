@@ -40,6 +40,9 @@
   .notfound {
     border-top: 1px solid var(--border-primary);
     text-align: center;
+    &-status {
+      font-size: 120px;
+    }
   }
 }
 
@@ -47,5 +50,8 @@
   .notfound {
     border-top: 1px solid var(--border-primary);
     text-align: center;
+    &-status {
+      font-size: 120px;
+    }
   }
 }

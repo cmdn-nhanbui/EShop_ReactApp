@@ -1,0 +1,20 @@
+.product-image-skeleton {
+  height: 380px;
+  margin-bottom: 8px;
+}
+
+.product-title-skeleton {
+  height: 20px;
+  margin: 0;
+  margin-top: 8px;
+}
+
+@media (max-width: 740px) {
+  .product-image-skeleton {
+    height: 200px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+}

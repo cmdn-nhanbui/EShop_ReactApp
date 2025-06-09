@@ -17,8 +17,6 @@ export interface Product {
 export interface StorageProps {
   products: Product[];
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-  cartItems: CartItem[];
-  setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
 type Variant = 'TEXT' | 'OUTLINED' | 'CONTAINED';

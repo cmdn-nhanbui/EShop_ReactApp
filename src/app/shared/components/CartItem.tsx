@@ -1,41 +1,33 @@
+import { useDispatch } from 'react-redux';
+
 import type { CartItem as CartItemType } from '../../core/constants/types';
 import { Counter } from './Counter';
 import { Icon } from './Icons';
 
-import { useStorage } from '../hooks/useStorage';
 import { useToast } from '../hooks/useToast';
+import { type AppDispatch } from '../../../redux/store';
+import { removeCartItem, updateCartQuantity } from '../../../redux/actions/cartActions';
 
 export const CartItem = ({ name, quantity, discountValue, price, id, thumbnail }: CartItemType) => {
   const { showToast } = useToast();
 
   const publicPrice = price * (1 - discountValue);
   const hasDiscount = discountValue !== 0;
-  const { setCartItems } = useStorage();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleChangeQuantity = (value: number) => {
     if (value === 0) {
       return handleDeleteCartItem();
     }
 
-    setCartItems((prev: CartItemType[]) => {
-      const newState = [...prev];
-      const cartItem = newState?.find((item: CartItemType) => item?.id === id);
-
-      if (cartItem) {
-        cartItem.quantity = value;
-      }
-
-      return newState;
-    });
+    dispatch(updateCartQuantity(id, value));
   };
 
   const handleDeleteCartItem = () => {
     const confirmDelete = window.confirm('Do you want remove this product ?');
 
     if (confirmDelete) {
-      setCartItems((prev: CartItemType[]) => {
-        return [...prev]?.filter((item) => item?.id !== id);
-      });
+      dispatch(removeCartItem(id));
       showToast({ message: 'Delete product successfully' });
     }
   };

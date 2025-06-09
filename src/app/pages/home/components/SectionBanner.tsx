@@ -1,8 +1,8 @@
+import { BannerItem } from '../../../shared/components/BannerItem';
+
 import basicTShirtBackground from '@/assets/images/Fashion - home-image6 1.png';
 import summerSaleBackground from '@/assets/images/Fashion - home-image7 1.png';
 import newArriveBackground from '@/assets/images/home-image51.png';
-
-import { BannerItem } from '../../../shared/components/BannerItem';
 
 export const SectionBanner = () => {
   return (

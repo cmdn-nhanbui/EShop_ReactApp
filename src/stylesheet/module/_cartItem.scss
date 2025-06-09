@@ -6,6 +6,8 @@
   padding: 20px;
   width: 100%;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border: 1px solid #ddd;
 
   .product-image {
     width: 80px;
@@ -82,4 +84,33 @@
   margin-left: 24px;
   padding: 8px 12px;
   cursor: pointer;
+}
+
+@media (max-width: 740px) {
+  .cart-item {
+    .product-name {
+      width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .button-remove {
+    position: absolute;
+    top: 8px;
+    right: 4px;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+  .cart-item {
+    .product-name {
+      max-width: unset;
+    }
+  }
+  .button-remove {
+    position: static;
+  }
 }
