@@ -1,14 +1,14 @@
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 
-const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
+const SecondaryLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Header transparent />
+      <Header />
       <main>{children}</main>
       <Footer />
     </>
   );
 };
 
-export default DefaultLayout;
+export default SecondaryLayout;

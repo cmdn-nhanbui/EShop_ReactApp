@@ -6,7 +6,7 @@ import { CartItem } from '../../../shared/components/CartItem';
 import type { RootState } from '../../../../redux/store';
 
 import emptyBox from '@/assets/images/empty-box.png';
-import { formatUSDCurrency } from '../../../core/helpers/moneyHelper';
+import { formatUSDCurrency } from '../../../core/helpers/currencyHelper';
 
 const TAX = 24;
 const DELIVERED_COST = 5;
@@ -26,7 +26,6 @@ const Cart = () => {
 
   return (
     <>
-      <div className='cart-header'></div>
       <div className='cart-container'>
         <div className='container '>
           <div className='flex flex-col flex-1'>
